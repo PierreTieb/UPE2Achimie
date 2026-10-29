@@ -23,7 +23,8 @@
     try { localStorage.setItem(CLE, JSON.stringify(etat)); } catch (e) { /* stockage indisponible */ }
   }
 
-  const etat = Object.assign({ langue: null, mode: null, inverse: false, medailles: {} }, lire());
+  // etapes : nombre d'étapes validées par module ({ securite: 3, bleue: 7, … })
+  const etat = Object.assign({ langue: null, mode: null, inverse: false, medailles: {}, etapes: {} }, lire());
   I18n.etat = etat;
 
   let ecran = 'accueil';
@@ -164,7 +165,7 @@
     const voile = document.createElement('div');
     voile.className = 'badge-voile';
     voile.innerHTML = `<div class="badge-vol"><div class="badge-geant">${Dessins.medaille(true, id)}</div></div>
-      <p class="badge-texte" dir="${I18n.dir(I18n.langueTexte())}">${I18n.html('badge_gagne')}</p>`;
+      <p class="badge-texte" dir="${I18n.dir(I18n.langueTexte())}">${id === 'securite' ? I18n.html('badge_gagne') : I18n.html('badge_atelier', null, { atelier: I18n.texte('carte_' + id + '_titre') })}</p>`;
     document.body.appendChild(voile);
 
     const canvas = $('confetti');
@@ -257,7 +258,7 @@
           { cle: 'non' },
           { cle: 'oui', danger: true, action: () => {
             try { localStorage.removeItem(CLE); } catch (e) { /* rien */ }
-            Object.assign(etat, { langue: null, mode: null, inverse: false, medailles: {} });
+            Object.assign(etat, { langue: null, mode: null, inverse: false, medailles: {}, etapes: {} });
             fermerReglages();
             montrer('accueil');
           } }
@@ -369,5 +370,12 @@
   window.addEventListener('scroll', fermerTraduction, { passive: true });
   window.addEventListener('resize', fermerTraduction);
 
-  window.App = { etat, sauver, montrer, rafraichir, recompenser, modale, toast, cacherToast, secouer };
+  // Une étape réussie reste accessible ensuite, même après avoir quitté le module
+  function validerEtape(module, i) {
+    etat.etapes = etat.etapes || {};
+    etat.etapes[module] = Math.max(etat.etapes[module] || 0, i + 1);
+    sauver();
+  }
+
+  window.App = { etat, sauver, montrer, rafraichir, recompenser, validerEtape, modale, toast, cacherToast, secouer };
 })();

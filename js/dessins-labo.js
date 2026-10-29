@@ -8,24 +8,24 @@
   const GOUTTE = 'M0 -12 Q9 0 9 5 A9 9 0 0 1 -9 5 Q-9 0 0 -12 Z';
 
   // ===== Verrerie : géométrie autour du centre du fond (0,0), le haut vers les y négatifs =====
-  // haut : hauteur du col ; k : hauteur de liquide par gramme ; masse : masse à vide (g)
+  // haut / largeur : encombrement ; k : hauteur de liquide par gramme ; masse : masse à vide (g)
   const FORMES = {
     erlenmeyer: {
       corps: 'M-10 -120 V-82 L-44 -9 Q-47 0 -37 0 H37 Q47 0 44 -9 L10 -82 V-120',
-      levre: 'M-14 -120 H14', haut: 120, k: 0.27, masse: 112.4
+      levre: 'M-14 -120 H14', haut: 120, largeur: 94, k: 0.27, masse: 112.4
     },
     becher: {
       corps: 'M-36 -96 L-34 -3 Q-34 0 -31 0 H31 Q34 0 34 -3 L36 -96',
-      levre: 'M-42 -98 Q-40 -96 -36 -96 M36 -96 H40', haut: 96, k: 0.6, masse: 98.6,
+      levre: 'M-42 -98 Q-40 -96 -36 -96 M36 -96 H40', haut: 96, largeur: 84, k: 0.6, masse: 98.6,
       graduations: 'M18 -30 H30 M22 -50 H31 M18 -70 H31'
     },
     bouteilleA: {
       corps: 'M-11 -112 V-94 Q-30 -88 -30 -70 V-4 Q-30 0 -26 0 H26 Q30 0 30 -4 V-70 Q30 -88 11 -94 V-112',
-      levre: 'M-13 -112 H13', haut: 112, k: 0.95, masse: 31.5, lettre: 'A'
+      levre: 'M-13 -112 H13', haut: 112, largeur: 60, k: 0.95, masse: 31.5, lettre: 'A'
     },
     bouteilleB: {
       corps: 'M-11 -112 V-94 Q-30 -88 -30 -70 V-4 Q-30 0 -26 0 H26 Q30 0 30 -4 V-70 Q30 -88 11 -94 V-112',
-      levre: 'M-13 -112 H13', haut: 112, k: 0.95, masse: 31.2, lettre: 'B'
+      levre: 'M-13 -112 H13', haut: 112, largeur: 60, k: 0.95, masse: 31.2, lettre: 'B'
     }
   };
 
@@ -101,15 +101,31 @@
         <g class="recipient__contenu"></g>
         ${verre(id)}
         <g class="recipient__entonnoir"></g>
-        <g class="recipient__agitateur"></g>
+        <g class="recipient__touilleur"></g>
       </g>
     </g>`;
   }
 
-  function agitateur(id) {
-    const h = FORMES[id].haut;
-    return `<g class="agitateur-tige"><line x1="-6" y1="-6" x2="16" y2="${-h - 34}" stroke="${INK}" stroke-width="7" stroke-linecap="round" opacity=".35"/>
-      <line x1="-6" y1="-6" x2="16" y2="${-h - 34}" stroke="#CDEBFA" stroke-width="5" stroke-linecap="round"/></g>`;
+  // Spatule plongée dans le récipient pour touiller
+  // Spatule bordeaux : manche avec poignée, palette arrondie en bas (bout de la palette en 0,0, longueur L)
+  function spatule(L) {
+    const B = '#7B1E2C', F = '#4A0F19', R = '#C25A6B';
+    return `<path d="M-2.2 ${-L + 20} H2.2 V-20 H-2.2 Z" fill="${B}" stroke="${F}" stroke-width="1.2"/>
+      <rect x="-4.5" y="${-L}" width="9" height="${Math.min(34, L * 0.3)}" rx="4.5" fill="${B}" stroke="${F}" stroke-width="1.5"/>
+      <path d="M-7 -2 Q-8 -16 -2.2 -22 H2.2 Q8 -16 7 -2 Q0 4 -7 -2 Z" fill="${B}" stroke="${F}" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M-2.4 ${-L + 5} V${-L + Math.min(34, L * 0.3) - 5} M-3.5 -5 Q-4.5 -12 -1.2 -18" stroke="${R}" stroke-width="1.6" stroke-linecap="round" fill="none"/>`;
+  }
+
+  // Spatule plongée dans le récipient pour touiller, légèrement penchée
+  function touilleur(id) {
+    return `<g class="touilleur"><g transform="translate(2 -6) rotate(12)">${spatule(FORMES[id].haut + 34)}</g></g>`;
+  }
+
+  // Zone invisible où lâcher un récipient : 50 % plus grande que lui, posée sur son support
+  function zoneDepot(id, x, y) {
+    const F = FORMES[id];
+    const l = F.largeur * 1.5, h = F.haut * 1.5;
+    return `<rect class="zone-depot" x="${x - l / 2}" y="${y + 4 - h}" width="${l}" height="${h}" rx="14"/>`;
   }
 
   // ===== Produits de l'étagère (viewBox 100×100, ouverture en haut au centre : 50,6) =====
@@ -155,7 +171,7 @@
       <g transform="translate(50 64) scale(.6)"><path d="${GOUTTE}" fill="#2557D6"/></g>`,
     vinaigre: bouteille('#F3E3B0', '', 0, 'rgba(225,240,250,.6)'),
     peroxyde: bouteille('#E8E2D8', 'H₂O₂', 12, '#B9763A'),
-    luminol: bouteille('#E8E2D8', 'luminol', 10, '#B9763A')
+    luminol: pot('#F3E6A0', 'poudre', 'luminol', 10)
   };
 
   function produit(id) {
@@ -170,10 +186,7 @@
     bouteilleB: `<g transform="translate(50 94) scale(.76)">${verre('bouteilleB')}</g>`,
     eprouvette: `<path d="M42 10 V80 Q42 92 50 92 Q58 92 58 80 V10" fill="${VERRE}" stroke="${INK}" stroke-width="3"/>
       <path d="M38 10 H62" stroke="${INK}" stroke-width="3.5" stroke-linecap="round"/>`,
-    agitateur: `<line x1="22" y1="88" x2="78" y2="12" stroke="${INK}" stroke-width="9" stroke-linecap="round" opacity=".35"/>
-      <line x1="22" y1="88" x2="78" y2="12" stroke="#CDEBFA" stroke-width="6" stroke-linecap="round"/>`,
-    spatule: `<line x1="16" y1="88" x2="64" y2="36" stroke="#8A96A3" stroke-width="7" stroke-linecap="round"/>
-      <ellipse cx="74" cy="25" rx="15" ry="8" transform="rotate(-45 74 25)" fill="#C9D2DB" stroke="${INK}" stroke-width="2.5"/>`,
+    spatule: `<g transform="translate(30 84) rotate(40) scale(1.3)">${spatule(68)}</g>`,
     entonnoir: `<path d="M16 16 H84 L57 54 V90 H43 V54 Z" fill="${VERRE}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
       <path d="M28 22 L46 46" stroke="#fff" stroke-width="3" stroke-linecap="round"/>`,
     pipette: `<ellipse cx="50" cy="20" rx="11" ry="14" fill="#F1F5F9" stroke="${INK}" stroke-width="2.5"/>
@@ -192,14 +205,9 @@
 
   // ===== Ce qu'on tient au-dessus du récipient pour verser =====
   // Origine (0,0) = endroit d'où tombe le produit
-  function verseur(type, produitId, couleurPoudre) {
+  function verseur(type, produitId) {
     if (type === 'gouttes') {
       return `<g class="verseur-tenu"><g transform="rotate(180) translate(-30 -3) scale(.6)">${PRODUITS[produitId]}</g></g>`;
-    }
-    if (type === 'spatule') {
-      return `<g class="verseur-tenu spatule-tenue"><line x1="8" y1="-6" x2="78" y2="-44" stroke="#8A96A3" stroke-width="5" stroke-linecap="round"/>
-        <ellipse cx="0" cy="-2" rx="13" ry="6" transform="rotate(-25)" fill="#C9D2DB" stroke="${INK}" stroke-width="2"/>
-        ${couleurPoudre ? `<path class="spatule-poudre" d="M-10 -4 Q0 -14 10 -6 Z" fill="${couleurPoudre}"/>` : ''}</g>`;
     }
     return `<g class="verseur-tenu"><g transform="rotate(-125) translate(-31 -3.7) scale(.62)">${PRODUITS[produitId]}</g></g>`;
   }
@@ -232,6 +240,7 @@
         <circle id="plaque-voyant" cx="446" cy="238" r="4" fill="#5B6772"/>
         <g id="plaque-bouton"><circle cx="528" cy="238" r="9" fill="#E9EEF3" stroke="${INK}" stroke-width="2"/><path d="M528 232 V238" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/></g>
       </g>` : ''}
+      <g id="zone-calque"></g>
       <g id="recipients-calque"></g>
       <g id="verseur-calque"></g>
       <g id="particules-calque"></g>
@@ -246,6 +255,6 @@
   }
 
   window.DessinsLabo = {
-    FORMES, SPOTS, GOUTTE, ENTONNOIR, recipient, contenu, niveau, agitateur, verseur, produit, materiel, scene
+    FORMES, SPOTS, GOUTTE, ENTONNOIR, recipient, contenu, niveau, touilleur, zoneDepot, verseur, produit, materiel, scene
   };
 })();

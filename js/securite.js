@@ -47,12 +47,22 @@
   const dialogue = Dialogue.creer($('secu-mascotte'), $('secu-bulle'), $('secu-ecouter'));
   const dire = (cle, vars) => dialogue.dire({ cle, vars });
 
+  // Reprend à la première étape pas encore validée (ou au début si tout est fait)
   function demarrer() {
+    const faites = (App.etat.etapes || {}).securite || 0;
+    allerA(faites >= ETAPES.length ? 0 : faites);
+  }
+
+  // Place l'élève au début de l'étape i : le mannequin porte déjà les protections des étapes
+  // précédentes, l'inventaire contient celles qui restent (et deux objets inutiles)
+  function allerA(i) {
+    const avant = ETAPES.slice(1, i).filter((z) => BESOIN[z]).map((z) => BESOIN[z]);
+    const reste = ETAPES.slice(i).filter((z) => BESOIN[z]).map((z) => BESOIN[z]);
     s = {
-      etape: 'table',
-      inventaire: [],
+      etape: ETAPES[i],
+      inventaire: i > 0 && reste.length ? OBJETS.filter((o) => reste.includes(o) || o === 'casque' || o === 'gantBoxe') : [],
       retires: [],
-      porte: [],
+      porte: avant,
       nouveau: null,
       phase: 'question',
       tableCible: null,
@@ -62,14 +72,33 @@
       erreur: null
     };
     dialogue.oublier();
+    App.cacherToast(true);
+  }
+
+  // Étape réussie : le point devient vert (et reste accessible), confettis
+  function valider() {
+    const i = ETAPES.indexOf(s.etape);
+    App.validerEtape('securite', i);
+    afficher();
+    const point = document.querySelector(`#secu-etapes [data-etape="${i}"]`);
+    if (point) {
+      const r = point.getBoundingClientRect();
+      Confetti.burst($('confetti'), r.left + r.width / 2, r.top + r.height / 2);
+    }
   }
 
   // ===== Affichage =====
   function afficher() {
     if (!s) demarrer();
     const idx = ETAPES.indexOf(s.etape);
-    $('secu-etapes').innerHTML = ETAPES.map((e, i) =>
-      `<span class="etape-point${i < idx ? ' fait' : ''}${i === idx ? ' actuel' : ''}"></span>`).join('');
+    const validees = (App.etat.etapes || {}).securite || 0;
+    $('secu-etapes').innerHTML = ETAPES.map((e, i) => {
+      const faite = i < validees;
+      // Accessibles : les étapes validées et la première qui reste à faire
+      return `<button type="button" class="etape-point${faite ? ' fait' : ''}${i === idx ? ' actuel' : ''}" data-etape="${i}"
+        ${faite || i === idx || i === validees ? '' : 'disabled'} aria-label="${i + 1}"></button>`;
+    }).join('');
+    $('secu-bulle').parentElement.classList.toggle('reussie', !!BESOIN[s.etape] && s.phase === 'ok' && !s.tableCible);
 
     if (s.etape === 'table' || s.tableCible) vueTable();
     else if (BESOIN[s.etape]) vueHabillage();
@@ -216,7 +245,7 @@
       s.porte.push(o);
       s.nouveau = o;
       s.phase = 'ok';
-      afficher();
+      valider();
     });
   }
 
@@ -277,6 +306,7 @@
     s.qPhase = 'question';
     s.qFaux = [];
     if (s.q >= QUIZ.length) {
+      App.validerEtape('securite', ETAPES.indexOf('quiz'));
       s = null;
       App.recompenser('securite');
       return;
@@ -311,16 +341,28 @@
   $('secu-actions').addEventListener('click', (e) => {
     const id = e.target.closest('button') && e.target.closest('button').id;
     if (id === 'secu-fini') {
+      valider();
       s.etape = 'yeux';
       s.phase = 'question';
       afficherEnHaut();
     } else if (id === 'secu-compris') {
+      if (s.etape === 'interdits') valider();
       etapeSuivante();
     } else if (id === 'secu-table') {
       s.tableCible = s.etape;
       s.erreur = null;
       afficherEnHaut();
     }
+  });
+
+  // Retour à une étape déjà validée (ou à l'étape en cours)
+  $('secu-etapes').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-etape]');
+    if (!b || b.disabled || !s) return;
+    const i = Number(b.dataset.etape);
+    if (i === ETAPES.indexOf(s.etape) && !s.tableCible) return;
+    allerA(i);
+    afficherEnHaut();
   });
 
   $('inventaire-cases').addEventListener('click', (e) => {

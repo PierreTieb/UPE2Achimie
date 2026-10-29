@@ -395,9 +395,18 @@ body[data-ecran="labo"] .toast { bottom: 16px; }
 .screen--secu { padding-bottom: 130px; }
 .secu-entete { display: flex; align-items: center; gap: 12px; padding-right: 64px; min-height: 54px; }
 .etapes { display: flex; gap: 8px; align-items: center; flex: 1; justify-content: center; }
-.etape-point { width: 12px; height: 12px; border-radius: 50%; background: #C9D7E3; transition: all .3s; }
-.etape-point.fait { background: var(--success); }
-.etape-point.actuel { background: var(--blue); width: 28px; border-radius: 999px; }
+/* Points d'étape : une étape validée est verte et se touche pour y revenir */
+.etape-point {
+  width: 14px; height: 14px; padding: 0; border: none; border-radius: 50%;
+  background: #C9D7E3; transition: all .3s; cursor: default;
+  outline-offset: 3px;
+}
+.etape-point:not(:disabled) { cursor: pointer; }
+.etape-point.fait { background: var(--success); box-shadow: 0 0 0 3px rgba(47,158,94,.18); }
+.etape-point.fait:hover { transform: scale(1.25); }
+.etape-point.actuel { background: var(--blue); width: 30px; border-radius: 999px; }
+.etape-point.actuel.fait { background: var(--success); }
+.etapes { gap: 10px; }
 
 .dialogue { display: flex; align-items: flex-end; gap: 12px; margin-top: 8px; }
 .dialogue__mascotte { width: 78px; height: 94px; flex-shrink: 0; }
@@ -412,6 +421,11 @@ body[data-ecran="labo"] .toast { bottom: 16px; }
   border-width: 10px 14px 10px 0; border-style: solid; border-color: transparent #fff transparent transparent;
 }
 .bulle.apparait { animation: bulle-apparait .35s cubic-bezier(.3, 1.5, .5, 1); transform-origin: left bottom; }
+/* Étape réussie : la bulle passe au vert */
+.bulle { transition: background .3s, box-shadow .3s; }
+.bulle.reussie { background: #E6F7EC; box-shadow: inset 0 0 0 2px rgba(47,158,94,.5), var(--shadow-card); }
+.bulle.reussie::before { border-right-color: #E6F7EC; }
+.bulle.reussie .bulle__aide { color: var(--success); font-weight: 800; border-top-color: rgba(47,158,94,.3); }
 @keyframes bulle-apparait { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
 .bulle__texte { flex: 1; font-size: 1.2rem; line-height: 1.5; min-width: 0; }
 .bulle__ligne, .bulle__etape, .bulle__aide { display: block; }
@@ -617,13 +631,18 @@ body[data-ecran="labo"] .toast { bottom: 16px; }
 .labo-svg { display: block; width: 100%; height: auto; user-select: none; -webkit-user-select: none; }
 .labo-svg.mode-tapoter { cursor: pointer; }
 .labo-svg.mode-agiter { cursor: ew-resize; touch-action: none; }
+.labo-svg.mode-glisser { touch-action: none; }
+.labo-svg.mode-glisser .recipient { cursor: grab; }
+.recipient.en-main { cursor: grabbing; filter: drop-shadow(0 10px 8px rgba(46,58,70,.3)); }
+/* Zone de dépôt du glisser-déposer : invisible, elle sert seulement à tester où l'on lâche */
+.zone-depot { fill: none; stroke: none; }
 
 /* Récipients : déplacement en douceur d'une place à l'autre */
 .recipient { transition: transform .7s cubic-bezier(.5, 0, .3, 1); }
 .recipient.sans-transition { transition: none; }
 .recipient.apparait .recipient__corps { animation: recipient-pose .6s cubic-bezier(.3, 1.4, .5, 1); }
 @keyframes recipient-pose { from { transform: translateY(-60px); opacity: 0; } to { transform: none; opacity: 1; } }
-.agitateur-tige { transition: transform .08s linear; }
+.touilleur { transition: transform .08s linear; }
 .bulle-chaude { animation: bulle-chaude 1.4s ease-in infinite; animation-delay: var(--d); }
 @keyframes bulle-chaude { from { transform: translateY(0); opacity: .9; } to { transform: translateY(var(--h)); opacity: 0; } }
 
@@ -654,6 +673,7 @@ body[data-ecran="labo"] .toast { bottom: 16px; }
 .labo-jauge span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #45C49A, #2F9E5E); border-radius: 999px; transition: width .15s; }
 .labo-actions { display: flex; justify-content: center; gap: 12px; margin-top: 14px; }
 .labo-actions:empty { display: none; }
+.btn-suivante { background: var(--success); box-shadow: 0 5px 0 #1F7A47, 0 10px 18px rgba(46,58,70,.15); animation: bulle-apparait .4s cubic-bezier(.3, 1.6, .5, 1); }
 .btn-appeler { background: #F5A524; box-shadow: 0 5px 0 #C27D10, 0 10px 18px rgba(46,58,70,.15); }
 .labo-fin { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .labo-fin__ico { width: 110px; height: 110px; animation: flotte 1.6s ease-in-out infinite alternate; }

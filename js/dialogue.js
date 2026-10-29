@@ -1,6 +1,8 @@
 // dialogue.js
 // Mascotte + bulle de texte + bouton Écouter, partagés par la sécurité et les ateliers.
 // dire() accepte un ou plusieurs morceaux : 'cle' ou { cle, vars, classe }.
+// La bulle ne se ré-anime que si la consigne change : une ligne d'aide (classe bulle__aide)
+// qui change seule est mise à jour discrètement.
 
 (function () {
   function creer(mascotteEl, texteEl, ecouterEl) {
@@ -19,7 +21,7 @@
 
     function dire(...liste) {
       morceaux = liste.filter(Boolean).map((m) => (typeof m === 'string' ? { cle: m } : m));
-      const sig = JSON.stringify(morceaux);
+      const sig = JSON.stringify(morceaux.filter((m) => m.classe !== 'bulle__aide'));
       const nouveau = sig !== signature;
       signature = sig;
       texteEl.innerHTML = morceaux.map((m) =>

@@ -433,192 +433,192 @@ Format :  n°. français   (anglais)
      réf. mot:plaque
      → 
 
-100. l'agitateur (baguette en verre)   (the stirring rod)
-     réf. mot:agitateur
-     → 
-
-101. la spatule   (the spatula)
+100. la spatule   (the spatula)
      réf. mot:spatule
      → 
 
-102. l'entonnoir   (the funnel)
+101. l'entonnoir   (the funnel)
      réf. mot:entonnoir
      → 
 
-103. la pipette   (the pipette)
+102. la pipette   (the pipette)
      réf. mot:pipette
      → 
 
-104. les pièces en cuivre   (copper coins)
+103. les pièces en cuivre   (copper coins)
      réf. mot:pieces
      → 
 
-105. les trombones   (paper clips)
+104. les trombones   (paper clips)
      réf. mot:trombones
      → 
 
-106. l'hydroxyde de sodium (la soude)   (sodium hydroxide)
+105. l'hydroxyde de sodium   (sodium hydroxide)
      réf. mot:soude
      → 
 
-107. le glucose   (glucose)
+106. le glucose   (glucose)
      réf. mot:glucose
      → 
 
-108. le bleu de méthylène   (methylene blue)
+107. le bleu de méthylène   (methylene blue)
      réf. mot:bleuMethylene
      → 
 
-109. la poudre de zinc   (zinc powder)
+108. la poudre de zinc   (zinc powder)
      réf. mot:zinc
      → 
 
-110. l'hexacyanoferrate de potassium   (potassium ferricyanide)
+109. l'hexacyanoferrate de potassium   (potassium ferricyanide)
      réf. mot:hexacyanoferrate
      → 
 
-111. le peroxyde d'hydrogène   (hydrogen peroxide)
+110. le peroxyde d'hydrogène   (hydrogen peroxide)
      réf. mot:peroxyde
      → 
 
-112. le luminol   (luminol)
+111. le luminol   (luminol)
      réf. mot:luminol
      → 
 
-113. le sel   (salt)
+112. le sel   (salt)
      réf. mot:sel
      → 
 
-114. le vinaigre   (vinegar)
+113. le vinaigre   (vinegar)
      réf. mot:vinaigre
      → 
 
-115. le gramme (g)   (the gram (g))
+114. le gramme (g)   (the gram (g))
      réf. mot:gramme
      → 
 
-116. une pastille   (a pellet)
+115. une pastille   (a pellet)
      réf. mot:pastille
      → 
 
-117. la poudre   (the powder)
+116. la poudre   (the powder)
      réf. mot:poudre
      → 
 
-118. le mélange   (the mixture)
+117. le mélange   (the mixture)
      réf. mot:melange
      → 
 
-119. l'étagère   (the shelf)
+118. l'étagère   (the shelf)
      réf. mot:etagere
      → 
 
-120. un outil   (a tool)
+119. un outil   (a tool)
      réf. mot:outil
      → 
 
-121. un récipient   (a container)
+120. un récipient   (a container)
      réf. mot:recipient
      → 
 
-122. le flacon   (the bottle)
+121. le flacon   (the bottle)
      réf. mot:flacon
      → 
 
-123. le fond   (the bottom)
+122. le fond   (the bottom)
      réf. mot:fond
      → 
 
-124. le bouton   (the button)
+123. le bouton   (the button)
      réf. mot:bouton
      → 
 
-125. zéro   (zero)
+124. zéro   (zero)
      réf. mot:zero
      → 
 
-126. placer   (to place)
+125. placer   (to place)
      réf. mot:placer
      → 
 
-127. verser   (to pour)
+126. verser   (to pour)
      réf. mot:verser
      → 
 
-128. remettre à zéro   (to reset to zero)
+127. remettre à zéro   (to reset to zero)
      réf. mot:remettre_zero
      → 
 
-129. remettre   (to put back)
+128. remettre   (to put back)
      réf. mot:remettre
      → 
 
-130. vérifier   (to check)
+129. vérifier   (to check)
      réf. mot:verifier
      → 
 
-131. touiller   (to stir)
+130. touiller   (to stir)
      réf. mot:touiller
      → 
 
-132. agiter   (to stir, to shake)
+131. agiter   (to stir, to shake)
      réf. mot:agiter
      → 
 
-133. mélanger   (to mix)
+132. mélanger   (to mix)
      réf. mot:melanger
      → 
 
-134. allumer   (to switch on)
+133. allumer   (to switch on)
      réf. mot:allumer
      → 
 
-135. afficher   (to show (on a screen))
+134. afficher   (to show (on a screen))
      réf. mot:afficher
      → 
 
-136. tapoter   (to tap)
+135. tapoter   (to tap)
      réf. mot:tapoter
      → 
 
-137. glisser   (to slide)
+136. glisser   (to slide)
      réf. mot:glisser
      → 
 
-138. valider   (to confirm)
+137. valider   (to confirm)
      réf. mot:valider
      → 
 
-139. compter   (to count)
+138. compter   (to count)
      réf. mot:compter
      → 
 
-140. vider   (to empty)
+139. vider   (to empty)
      réf. mot:vider
      → 
 
-141. relire   (to read again)
+140. relire   (to read again)
      réf. mot:relire
      → 
 
-142. découvrir   (to discover)
+141. découvrir   (to discover)
      réf. mot:decouvrir
      → 
 
-143. attention   (careful)
+142. attention   (careful)
      réf. mot:attention
      → 
 
-144. délicatement   (gently)
+143. délicatement   (gently)
      réf. mot:delicatement
      → 
 
-145. doucement   (slowly, gently)
+144. doucement   (slowly, gently)
      réf. mot:doucement
      → 
 
-146. prêt   (ready)
+145. prêt   (ready)
      réf. mot:pret
+     → 
+
+146. une pincée   (a pinch)
+     réf. mot:pincee
      → 
 
 147. une surprise   (a surprise)
@@ -634,7 +634,7 @@ Format :  n°. français   (anglais)
      → 
 
 
-PARTIE 2 — LES TEXTES DE L'APPLICATION (163 textes)
+PARTIE 2 — LES TEXTES DE L'APPLICATION (170 textes)
 ========================================================================
 
 --- Boutons et écrans de l'application ---
@@ -779,545 +779,573 @@ PARTIE 2 — LES TEXTES DE L'APPLICATION (163 textes)
      réf. texte:badge_gagne
      → 
 
-036. Question {n} / {total}
+036. Bravo ! Tu as gagné la médaille « {atelier} » !
+     réf. texte:badge_atelier
+     → 
+
+037. Question {n} / {total}
      réf. texte:question_n
+     → 
+
+038. Bravo, étape réussie !
+     réf. texte:etape_reussie
+     → 
+
+039. Étape suivante
+     réf. texte:etape_suivante
+     → 
+
+040. Terminer
+     réf. texte:terminer
      → 
 
 
 --- Sécurité : noms des objets sur la table ---
 
-037. [Blouse]
+041. [Blouse]
      réf. texte:obj_blouse
      → 
 
-038. [Lunettes]
+042. [Lunettes]
      réf. texte:obj_lunettes
      → 
 
-039. [Gants]
+043. [Gants]
      réf. texte:obj_gants
      → 
 
-040. [Masque]
+044. [Masque]
      réf. texte:obj_masque
      → 
 
-041. [Charlotte]
+045. [Charlotte]
      réf. texte:obj_charlotte
      → 
 
-042. [Bottes]
+046. [Bottes]
      réf. texte:obj_bottes
      → 
 
-043. [Casque de vélo]
+047. [Casque de vélo]
      réf. texte:obj_casque
      → 
 
-044. [Protège-coude]
+048. [Protège-coude]
      réf. texte:obj_coudiere
      → 
 
-045. [Gant de boxe]
+049. [Gant de boxe]
      réf. texte:obj_gantBoxe
      → 
 
-046. [Stéthoscope]
+050. [Stéthoscope]
      réf. texte:obj_stethoscope
      → 
 
-047. [Couteau]
+051. [Couteau]
      réf. texte:obj_couteau
      → 
 
-048. [Lunettes de soleil]
+052. [Lunettes de soleil]
      réf. texte:obj_lunettesSoleil
      → 
 
-049. [Parapluie]
+053. [Parapluie]
      réf. texte:obj_parapluie
      → 
 
-050. [Écharpe]
+054. [Écharpe]
      réf. texte:obj_echarpe
      → 
 
 
 --- Sécurité : ce que dit la mascotte ---
 
-051. [Bonjour] ! Avant une [expérience], il faut se [protéger]. Sur la [table], [touche] les [objets] qui [servent] à te [protéger]. Quand tu as [fini], [appuie] sur « [J'ai fini] ».
+055. [Bonjour] ! Avant une [expérience], il faut se [protéger]. Sur la [table], [touche] les [objets] qui [servent] à te [protéger]. Quand tu as [fini], [appuie] sur « [J'ai fini] ».
      réf. texte:s_intro
      → 
 
-052. [Stop] ! Le [couteau] est un [objet] [dangereux]. On ne [joue] [jamais] avec. Au [laboratoire], on [utilise] seulement le [matériel] donné par le [professeur].
+056. [Stop] ! Le [couteau] est un [objet] [dangereux]. On ne [joue] [jamais] avec. Au [laboratoire], on [utilise] seulement le [matériel] donné par le [professeur].
      réf. texte:s_couteau
      → 
 
-053. Voici le [mannequin]. On va l'[habiller] pour le [protéger]. La partie la plus [fragile] du [corps], ce sont les [yeux]. Il faut [toujours] les [protéger]. Dans ton [inventaire], [choisis] l'[objet] qui [protège] les [yeux].
+057. Voici le [mannequin]. On va l'[habiller] pour le [protéger]. La partie la plus [fragile] du [corps], ce sont les [yeux]. Il faut [toujours] les [protéger]. Dans ton [inventaire], [choisis] l'[objet] qui [protège] les [yeux].
      réf. texte:s_yeux
      → 
 
-054. [Bravo] ! Les [lunettes] [protègent] les [yeux]. Il est [interdit] d'[enlever] les [lunettes] quand on est [près] des [produits chimiques]. [Appuie] sur « [J'ai compris] ».
+058. [Bravo] ! Les [lunettes] [protègent] les [yeux]. Il est [interdit] d'[enlever] les [lunettes] quand on est [près] des [produits chimiques]. [Appuie] sur « [J'ai compris] ».
      réf. texte:s_yeux_ok
      → 
 
-055. Certains [produits] peuvent [tacher] ou [trouer] les [vêtements]. Dans ton [inventaire], [choisis] l'[objet] qui [protège] les [vêtements].
+059. Certains [produits] peuvent [tacher] ou [trouer] les [vêtements]. Dans ton [inventaire], [choisis] l'[objet] qui [protège] les [vêtements].
      réf. texte:s_vet
      → 
 
-056. [Bravo] ! On [garde] la [blouse] pendant toute l'[expérience], et elle doit être [fermée].
+060. [Bravo] ! On [garde] la [blouse] pendant toute l'[expérience], et elle doit être [fermée].
      réf. texte:s_vet_ok
      → 
 
-057. On [prend] le [matériel] avec les [mains]. Certains [produits] peuvent [brûler] la [peau]. Dans ton [inventaire], [choisis] l'[objet] qui [protège] les [mains].
+061. On [prend] le [matériel] avec les [mains]. Certains [produits] peuvent [brûler] la [peau]. Dans ton [inventaire], [choisis] l'[objet] qui [protège] les [mains].
      réf. texte:s_mains
      → 
 
-058. [Bravo] ! Si tu n'as pas de [gants] et qu'un [produit] [touche] ta [main], il faut [rincer] ta [main] sous l'[eau] du [robinet], [longtemps].
+062. [Bravo] ! Si tu n'as pas de [gants] et qu'un [produit] [touche] ta [main], il faut [rincer] ta [main] sous l'[eau] du [robinet], [longtemps].
      réf. texte:s_mains_ok
      → 
 
-059. Oh ! Cet [objet] n'est pas dans ton [inventaire]. [Retourne] à la [table] pour le [prendre].
+063. Oh ! Cet [objet] n'est pas dans ton [inventaire]. [Retourne] à la [table] pour le [prendre].
      réf. texte:s_manque
      → 
 
-060. [Prends] sur la [table] l'[objet] qui [protège] les [yeux].
+064. [Prends] sur la [table] l'[objet] qui [protège] les [yeux].
      réf. texte:s_table_yeux
      → 
 
-061. [Prends] sur la [table] l'[objet] qui [protège] les [vêtements].
+065. [Prends] sur la [table] l'[objet] qui [protège] les [vêtements].
      réf. texte:s_table_vet
      → 
 
-062. [Prends] sur la [table] l'[objet] qui [protège] les [mains].
+066. [Prends] sur la [table] l'[objet] qui [protège] les [mains].
      réf. texte:s_table_mains
      → 
 
-063. Pas celui-là !
+067. Pas celui-là !
      réf. texte:s_pas_celui
      → 
 
-064. Ça ne [protège] pas les [yeux]. [Essaie] encore !
+068. Ça ne [protège] pas les [yeux]. [Essaie] encore !
      réf. texte:s_faux_yeux
      → 
 
-065. Ça ne [protège] pas les [vêtements]. [Essaie] encore !
+069. Ça ne [protège] pas les [vêtements]. [Essaie] encore !
      réf. texte:s_faux_vet
      → 
 
-066. Ça ne [protège] pas les [mains]. [Essaie] encore !
+070. Ça ne [protège] pas les [mains]. [Essaie] encore !
      réf. texte:s_faux_mains
      → 
 
-067. Au [laboratoire], ces 3 choses sont [INTERDITES] :
+071. Au [laboratoire], ces 3 choses sont [INTERDITES] :
      réf. texte:s_interdits
      → 
 
-068. [Tremper ses doigts]
+072. [Tremper ses doigts]
      réf. texte:s_int_tremper
      → 
 
-069. [Goûter]
+073. [Goûter]
      réf. texte:s_int_gouter
      → 
 
-070. [Sentir]
+074. [Sentir]
      réf. texte:s_int_sentir
      → 
 
 
 --- Sécurité : questionnaire ---
 
-071. Laquelle de ces [personnes] [porte] [correctement] ses [lunettes] ?
+075. Laquelle de ces [personnes] [porte] [correctement] ses [lunettes] ?
      réf. texte:q1
      → 
 
-072. Tu ne te [protèges] pas les [yeux].
+076. Tu ne te [protèges] pas les [yeux].
      réf. texte:q1_e
      → 
 
-073. Il y a un [verre] qui [contient] un [liquide] [transparent]. Je [fais] quoi ?
+077. Il y a un [verre] qui [contient] un [liquide] [transparent]. Je [fais] quoi ?
      réf. texte:q2
      → 
 
-074. C'est [sûrement] de l'[eau], tout va bien.
+078. C'est [sûrement] de l'[eau], tout va bien.
      réf. texte:q2a
      → 
 
-075. Tu ne [sais] pas si c'est de l'[eau] ou un autre [produit] plus [dangereux].
+079. Tu ne [sais] pas si c'est de l'[eau] ou un autre [produit] plus [dangereux].
      réf. texte:q2a_e
      → 
 
-076. Je [sens] ou je [goûte] pour [savoir] ce que c'est.
+080. Je [sens] ou je [goûte] pour [savoir] ce que c'est.
      réf. texte:q2b
      → 
 
-077. On ne [goûte] [jamais] ! Si ce n'est pas de l'[eau], c'est très [dangereux].
+081. On ne [goûte] [jamais] ! Si ce n'est pas de l'[eau], c'est très [dangereux].
      réf. texte:q2b_e
      → 
 
-078. Je ne l'[utilise] plus si personne ne me [dit] ce que c'est.
+082. Je ne l'[utilise] plus si personne ne me [dit] ce que c'est.
      réf. texte:q2c
      → 
 
-079. Une [goutte] de [produit] a [atterri] sur ma [main], c'est un [accident]. Je [fais] quoi ?
+083. Une [goutte] de [produit] a [atterri] sur ma [main], c'est un [accident]. Je [fais] quoi ?
      réf. texte:q3
      → 
 
-080. Je [mets] les [mains] dans les [poches].
+084. Je [mets] les [mains] dans les [poches].
      réf. texte:q3a
      → 
 
-081. Le [produit] pourra quand même te [brûler].
+085. Le [produit] pourra quand même te [brûler].
      réf. texte:q3a_e
      → 
 
-082. Je me [rince] les [mains] au [robinet].
+086. Je me [rince] les [mains] au [robinet].
      réf. texte:q3b
      → 
 
-083. Je [hurle] !
+087. Je [hurle] !
      réf. texte:q3c
      → 
 
-084. Pas la peine de [paniquer].
+088. Pas la peine de [paniquer].
      réf. texte:q3c_e
      → 
 
-085. Je [vois] un [camarade] qui a [oublié] une [consigne] de [sécurité]. Je [fais] quoi ?
+089. Je [vois] un [camarade] qui a [oublié] une [consigne] de [sécurité]. Je [fais] quoi ?
      réf. texte:q4
      → 
 
-086. Je le [préviens] et je lui [rappelle] qu'il doit se [protéger].
+090. Je le [préviens] et je lui [rappelle] qu'il doit se [protéger].
      réf. texte:q4a
      → 
 
-087. J'[appelle] le [professeur] pour que l'[élève] soit [puni].
+091. J'[appelle] le [professeur] pour que l'[élève] soit [puni].
      réf. texte:q4b
      → 
 
-088. Ce n'est pas [sympa] pour ton [camarade].
+092. Ce n'est pas [sympa] pour ton [camarade].
      réf. texte:q4b_e
      → 
 
-089. Je ne [dis] rien, ce n'est pas mon [problème].
+093. Je ne [dis] rien, ce n'est pas mon [problème].
      réf. texte:q4c
      → 
 
-090. Si, c'est ton [problème] : on doit [veiller] les uns sur les autres.
+094. Si, c'est ton [problème] : on doit [veiller] les uns sur les autres.
      réf. texte:q4c_e
      → 
 
 
 --- Ateliers : écran du labo ---
 
-091. Étape {n} / {total}
+095. Étape {n} / {total}
      réf. texte:etape_n
      → 
 
-092. L'[étagère] des [produits]
+096. L'[étagère] des [produits]
      réf. texte:rayon_produits
      → 
 
-093. Le [matériel]
+097. Le [matériel]
      réf. texte:rayon_materiel
      → 
 
-094. Valider
+098. Valider
      réf. texte:valider
      → 
 
-095. Appeler le professeur
+099. Appeler le professeur
      réf. texte:appeler_btn
      → 
 
-096. Gagner ma médaille
+100. Gagner ma médaille
      réf. texte:bouton_medaille
      → 
 
-097. Tu es [prêt] !
+101. Tu es [prêt] !
      réf. texte:fin_titre
      → 
 
-098. Tu connais toutes les étapes. Maintenant, fais l'[expérience] pour de vrai au [laboratoire] pour [découvrir] la fin. Que va-t-il se passer ? C'est une [surprise] !
+102. Tu connais toutes les étapes. Maintenant, fais l'[expérience] pour de vrai au [laboratoire] pour [découvrir] la fin. Que va-t-il se passer ? C'est une [surprise] !
      réf. texte:fin_surprise
      → 
 
-099. Tu connais toutes les étapes. Maintenant, fais l'[expérience] pour de vrai au [laboratoire]. La suite sera faite par les [professeurs] : c'est une [surprise] !
+103. Tu connais toutes les étapes. Maintenant, fais l'[expérience] pour de vrai au [laboratoire]. La suite sera faite par les [professeurs] : c'est une [surprise] !
      réf. texte:fin_profs
      → 
 
 
 --- Ateliers : noms sur l'étagère et dans le matériel ---
 
-100. [Eau]
+104. [Eau]
      réf. texte:prod_eau
      → 
 
-101. [Hydroxyde de sodium]
+105. [Hydroxyde de sodium]
      réf. texte:prod_soude
      → 
 
-102. [Glucose]
+106. [Glucose]
      réf. texte:prod_glucose
      → 
 
-103. [Sel]
+107. [Sel]
      réf. texte:prod_sel
      → 
 
-104. [Vinaigre]
+108. [Vinaigre]
      réf. texte:prod_vinaigre
      → 
 
-105. [Poudre de zinc]
+109. [Poudre de zinc]
      réf. texte:prod_zinc
      → 
 
-106. [Hexacyanoferrate de potassium]
+110. [Hexacyanoferrate de potassium]
      réf. texte:prod_hexacyanoferrate
      → 
 
-107. [Bleu de méthylène]
+111. [Bleu de méthylène]
      réf. texte:prod_bleuMethylene
      → 
 
-108. [Erlenmeyer]
+112. [Erlenmeyer]
      réf. texte:mat_erlenmeyer
      → 
 
-109. [Bécher]
+113. [Bécher]
      réf. texte:mat_becher
      → 
 
-110. [Éprouvette]
+114. [Éprouvette]
      réf. texte:mat_eprouvette
      → 
 
-111. [Bouteille] A
+115. [Bouteille] A
      réf. texte:mat_bouteilleA
      → 
 
-112. [Bouteille] B
+116. [Bouteille] B
      réf. texte:mat_bouteilleB
      → 
 
-113. [Agitateur]
-     réf. texte:mat_agitateur
-     → 
-
-114. [Spatule]
+117. [Spatule]
      réf. texte:mat_spatule
      → 
 
-115. [Entonnoir]
+118. [Entonnoir]
      réf. texte:mat_entonnoir
      → 
 
-116. [Pipette]
+119. [Pipette]
      réf. texte:mat_pipette
      → 
 
-117. [Pièces en cuivre]
+120. [Pièces en cuivre]
      réf. texte:mat_pieces
      → 
 
-118. [Trombones]
+121. [Trombones]
      réf. texte:mat_trombones
      → 
 
 
 --- Ateliers : aides pour chaque geste ---
 
-119. [Choisis] le bon [récipient] dans le [matériel].
+122. [Choisis] le bon [récipient] dans le [matériel].
      réf. texte:h_placer
      → 
 
-120. [Appuie] sur le [bouton] 0 de la [balance] pour la [remettre à zéro].
+123. [Fais glisser] le [récipient] avec ton doigt jusqu'au bon endroit.
+     réf. texte:h_glisser
+     → 
+
+124. [Appuie] sur le [bouton] 0 de la [balance] pour la [remettre à zéro].
      réf. texte:h_tarer
      → 
 
-121. [Choisis] le bon [produit] sur l'[étagère].
+125. [Choisis] le bon [produit] sur l'[étagère].
      réf. texte:h_produit
      → 
 
-122. [Tapote] sur le [flacon] pour [verser]. Quand la [balance] [affiche] {masse} g, [appuie] sur « [Valider] ».
+126. [Tapote] sur le [flacon] pour [verser]. Quand la [balance] [affiche] {masse} g, [appuie] sur « [Valider] ».
      réf. texte:h_verser
      → 
 
-123. [Tapote] sur le [flacon] pour faire tomber les [gouttes]. [Compte]-les ! Puis [appuie] sur « [Valider] ».
+127. [Tapote] sur le [flacon] pour faire tomber les [gouttes]. [Compte]-les ! Puis [appuie] sur « [Valider] ».
      réf. texte:h_gouttes
      → 
 
-124. [Choisis] le bon [outil] dans le [matériel].
+128. [Tapote] sur la [poudre] pour en [verser] une [pincée] : quelques petits coups seulement. Puis [appuie] sur « [Valider] ».
+     réf. texte:h_pincee
+     → 
+
+129. [Choisis] le bon [outil] dans le [matériel].
      réf. texte:h_outil
      → 
 
-125. [Tapote] sur la [spatule] pour [verser] la [poudre].
-     réf. texte:h_spatule
-     → 
-
-126. [Glisse] ton doigt de gauche à droite sur le [récipient] pour [agiter].
+130. [Glisse] ton doigt de gauche à droite sur le [récipient] pour [agiter].
      réf. texte:h_agiter
      → 
 
-127. [Allume] la [plaque chauffante] : [touche] son [bouton].
+131. [Allume] la [plaque chauffante] : [touche] son [bouton].
      réf. texte:h_chauffer
      → 
 
-128. [Choisis] le bon [objet] dans le [matériel].
+132. [Choisis] le bon [objet] dans le [matériel].
      réf. texte:h_deposer
      → 
 
-129. [Appuie] sur « [Appeler] le [professeur] ».
+133. [Appuie] sur « [Appeler] le [professeur] ».
      réf. texte:h_appeler
      → 
 
-130. Le [professeur] [verse] le [peroxyde d'hydrogène].
+134. Le [professeur] [verse] le [peroxyde d'hydrogène].
      réf. texte:prof_peroxyde
      → 
 
-131. Le [professeur] [verse] le [luminol].
+135. Le [professeur] [verse] le [luminol].
      réf. texte:prof_luminol
      → 
 
 
 --- Ateliers : messages d'erreur ---
 
-132. Ce n'est pas le bon [récipient]. [Relis] la [consigne] !
+136. Ce n'est pas le bon [récipient]. [Relis] la [consigne] !
      réf. texte:e_recipient
      → 
 
-133. Ce n'est pas le bon [produit]. [Relis] la [consigne] !
+137. Ce n'est pas le bon [produit]. [Relis] la [consigne] !
      réf. texte:e_produit
      → 
 
-134. Ce n'est pas le bon [outil]. [Relis] la [consigne] !
+138. Ce n'est pas le bon [outil]. [Relis] la [consigne] !
      réf. texte:e_outil
      → 
 
-135. Ce n'est pas le bon [objet]. [Relis] la [consigne] !
+139. Ce n'est pas le bon [objet]. [Relis] la [consigne] !
      réf. texte:e_objet
      → 
 
-136. Pas maintenant ! [Relis] la [consigne].
+140. Pas assez ! Une [pincée], c'est quelques petits coups. Continue !
+     réf. texte:e_pincee_moins
+     → 
+
+141. Trop ! Une [pincée], c'est seulement quelques petits coups. On [vide] et on recommence.
+     réf. texte:e_pincee_plus
+     → 
+
+142. Pas ici ! [Relis] la [consigne] et [fais glisser] le [récipient] au bon endroit.
+     réf. texte:e_glisser
+     → 
+
+143. Pas maintenant ! [Relis] la [consigne].
      réf. texte:e_moment
      → 
 
-137. Pas encore ! La [balance] doit [afficher] {masse} g.
+144. Pas encore ! La [balance] doit [afficher] {masse} g.
      réf. texte:e_pas_assez
      → 
 
-138. Trop ! Il fallait {masse} g. On [vide] et on recommence.
+145. Trop ! Il fallait {masse} g. On [vide] et on recommence.
      réf. texte:e_trop
      → 
 
-139. Tu as mis {n} [gouttes], il en faut {cible}. Continue !
+146. Tu as mis {n} [gouttes], il en faut {cible}. Continue !
      réf. texte:e_gouttes_moins
      → 
 
-140. Tu as mis {n} [gouttes], il en fallait {cible}. On recommence.
+147. Tu as mis {n} [gouttes], il en fallait {cible}. On recommence.
      réf. texte:e_gouttes_plus
      → 
 
 
 --- Atelier 1 : la bouteille bleue (consignes) ---
 
-141. [Place] un [erlenmeyer] sur la [balance] et [remets-la à zéro].
+148. [Place] un [erlenmeyer] sur la [balance] et [remets-la à zéro].
      réf. texte:b1
      → 
 
-142. [Verse] 5 [g] d'[hydroxyde de sodium] dans l'[erlenmeyer]. [Remets la balance à zéro].
+149. [Verse] 5 [g] d'[hydroxyde de sodium] dans l'[erlenmeyer]. [Remets la balance à zéro].
      réf. texte:b2
      → 
 
-143. [Verse] 200 [g] d'[eau] dans l'[erlenmeyer] et [touille]. On ne doit plus [voir] de [pastilles] au [fond].
+150. [Verse] 200 [g] d'[eau] dans l'[erlenmeyer] et [touille]. On ne doit plus [voir] de [pastilles] au [fond].
      réf. texte:b3
      → 
 
-144. [Verse] 5 [gouttes] de [bleu de méthylène]. [Attention] : ça [tache] très fort !
+151. [Verse] 5 [gouttes] de [bleu de méthylène]. [Attention] : ça [tache] très fort !
      réf. texte:b4
      → 
 
-145. [Remets] l'[erlenmeyer] sur la [balance] et [vérifie] qu'elle [affiche] [zéro].
+152. [Remets] l'[erlenmeyer] sur la [balance] et [vérifie] qu'elle [affiche] [zéro].
      réf. texte:b5
      → 
 
-146. [Verse] 10 [g] de [glucose] dans l'[erlenmeyer].
+153. [Verse] 10 [g] de [glucose] dans l'[erlenmeyer].
      réf. texte:b6
      → 
 
-147. [Touille] quelques minutes.
+154. [Touille] quelques minutes.
      réf. texte:b7
      → 
 
 
 --- Atelier 2 : chasse au trésor (consignes) ---
 
-148. [Place] un [bécher] sur la [balance] et [remets-la à zéro].
+155. [Place] un [bécher] sur la [balance] et [remets-la à zéro].
      réf. texte:t1
      → 
 
-149. [Verse] 100 [g] d'[eau] dans le [bécher].
+156. [Verse] 100 [g] d'[eau] dans le [bécher].
      réf. texte:t2
      → 
 
-150. [Remets la balance à zéro].
+157. [Remets la balance à zéro].
      réf. texte:t3
      → 
 
-151. [Verse] [délicatement] 10 [g] de [soude] dans le [bécher]. [Agite] [doucement] pour [mélanger].
+158. [Verse] [délicatement] 10 [g] d'[hydroxyde de sodium] dans le [bécher]. [Agite] [doucement] pour [mélanger].
      réf. texte:t4
      → 
 
-152. [Place] le [bécher] sur la [plaque chauffante] quelques minutes.
+159. [Place] le [bécher] sur la [plaque chauffante] quelques minutes.
      réf. texte:t5
      → 
 
-153. [Verse] une [spatule] de [poudre de zinc] dans le [bécher].
+160. [Verse] une [pincée] de [poudre de zinc] dans le [bécher].
      réf. texte:t6
      → 
 
-154. [Place] les [pièces en cuivre] dans le [mélange] et [touille] [doucement] pour faire bouger les [pièces].
+161. [Place] les [pièces en cuivre] dans le [mélange] et [touille] [doucement] pour faire bouger les [pièces].
      réf. texte:t7
      → 
 
 
 --- Atelier 3 : lumière chimique (consignes) ---
 
-155. [Bouteille] B : [place] la [bouteille] B sur la [balance] et [remets-la à zéro].
+162. [Bouteille] B : [place] la [bouteille] B sur la [balance] et [remets-la à zéro].
      réf. texte:l1
      → 
 
-156. [Verse] 40 [g] d'[eau] dans la [bouteille] B. [Utilise] un [entonnoir].
+163. [Verse] 40 [g] d'[eau] dans la [bouteille] B. [Utilise] un [entonnoir].
      réf. texte:l2
      → 
 
-157. [Verse] une [spatule] d'[hexacyanoferrate de potassium] (la [poudre] orange).
+164. [Verse] une [pincée] d'[hexacyanoferrate de potassium] (la [poudre] orange).
      réf. texte:l3
      → 
 
-158. [Appelle] le [professeur] pour [verser] le [peroxyde d'hydrogène].
+165. [Appelle] le [professeur] pour [verser] le [peroxyde d'hydrogène].
      réf. texte:l4
      → 
 
-159. [Bouteille] A : [place] la [bouteille] A sur la [balance] et [remets-la à zéro].
+166. [Bouteille] A : [place] la [bouteille] A sur la [balance] et [remets-la à zéro].
      réf. texte:l5
      → 
 
-160. [Verse] 20 [g] de [soude] dans la [bouteille] A. [Utilise] un [entonnoir].
+167. [Verse] 20 [g] d'[hydroxyde de sodium] dans la [bouteille] A. [Utilise] un [entonnoir].
      réf. texte:l6
      → 
 
-161. [Remets la balance à zéro].
+168. [Remets la balance à zéro].
      réf. texte:l7
      → 
 
-162. [Verse] 30 [g] d'[eau] dans la [bouteille] A.
+169. [Verse] 30 [g] d'[eau] dans la [bouteille] A.
      réf. texte:l8
      → 
 
-163. [Appelle] le [professeur] pour [verser] le [luminol].
+170. [Appelle] le [professeur] pour [verser] le [luminol].
      réf. texte:l9
      → 
 
