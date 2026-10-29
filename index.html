@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atelier de chimie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ÉCRAN : ACCUEIL -->
+  <section id="screen-accueil" class="screen active">
+    <div class="accueil">
+      <div class="accueil__mascotte" id="accueil-mascotte"></div>
+      <h1 class="app-title app-title--grand">Atelier de chimie</h1>
+      <button type="button" id="btn-langue" class="btn-langue">
+        <span class="btn-langue__globe" id="btn-langue-globe"></span>
+        <span class="btn-langue__mot"><span id="mot-langue">Langue</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ÉCRAN : CHOIX DE LA LANGUE (avant tout choix : pas de texte, seulement les noms des langues) -->
+  <section id="screen-langue" class="screen">
+    <button type="button" class="btn-back" data-retour="accueil" aria-label="Retour">←</button>
+    <div class="langue-globe" id="langue-globe"></div>
+    <div class="liste-langues" id="liste-langues"></div>
+  </section>
+
+  <!-- ÉCRAN : NIVEAU (entièrement dans la langue choisie, boutons toujours placés de gauche à droite) -->
+  <section id="screen-niveau" class="screen">
+    <button type="button" class="btn-back" data-retour="langue" data-tl="retour"></button>
+    <h1 class="app-title" data-tl="niveau_titre"></h1>
+    <div class="liste-niveaux">
+      <button type="button" class="niveau" data-mode="fr">
+        <span class="niveau__ico" data-ico="fr"></span>
+        <span class="niveau__txt"><span class="niveau__titre" data-tl="niveau_fr_titre"></span><span class="niveau__desc" data-tl="niveau_fr_desc"></span></span>
+      </button>
+      <button type="button" class="niveau" data-mode="aide">
+        <span class="niveau__ico" data-ico="aide"></span>
+        <span class="niveau__txt"><span class="niveau__titre" data-tl="niveau_aide_titre"></span><span class="niveau__desc" data-tl="niveau_aide_desc"></span></span>
+      </button>
+      <button type="button" class="niveau" data-mode="traduit">
+        <span class="niveau__ico" data-ico="traduit"></span>
+        <span class="niveau__txt"><span class="niveau__titre" data-tl="niveau_trad_titre"></span><span class="niveau__desc" data-tl="niveau_trad_desc"></span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ÉCRAN : MODE DE TRAVAIL -->
+  <section id="screen-ateliers" class="screen">
+    <button type="button" class="btn-back" data-retour="accueil" data-t="retour"></button>
+    <div class="titre-medailles">
+      <div class="medailles" id="medailles"></div>
+      <h1 class="app-title" data-t="ateliers_titre"></h1>
+    </div>
+    <div class="cartes">
+      <button type="button" class="carte carte--secu" id="carte-secu">
+        <span class="carte__fond" data-fond="secu"></span>
+        <span class="carte__texte">
+          <span class="carte__titre" data-t="carte_secu_titre"></span>
+          <span class="carte__sous" data-t="carte_secu_sous"></span>
+        </span>
+      </button>
+      <div class="cartes-ateliers">
+        <button type="button" class="carte carte--bleue verrouillee" data-atelier="bleue">
+          <span class="carte__fond" data-fond="bleue"></span>
+          <span class="carte__titre" data-t="carte_bleue_titre"></span>
+          <span class="carte__sous" data-t="carte_bleue_sous"></span>
+          <span class="carte__cadenas"></span>
+        </button>
+        <button type="button" class="carte carte--tresor verrouillee" data-atelier="tresor">
+          <span class="carte__fond" data-fond="tresor"></span>
+          <span class="carte__texte">
+            <span class="carte__titre" data-t="carte_tresor_titre"></span>
+            <span class="carte__sous" data-t="carte_tresor_sous"></span>
+          </span>
+          <span class="carte__cadenas"></span>
+        </button>
+        <button type="button" class="carte carte--lumiere verrouillee" data-atelier="lumiere">
+          <span class="carte__fond" data-fond="lumiere"></span>
+          <span class="carte__texte">
+            <span class="carte__titre" data-t="carte_lumiere_titre"></span>
+            <span class="carte__sous" data-t="carte_lumiere_sous"></span>
+          </span>
+          <span class="carte__cadenas"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉCRAN : SÉCURITÉ (contenu construit par securite.js) -->
+  <section id="screen-securite" class="screen screen--secu">
+    <div class="secu-entete">
+      <button type="button" class="btn-back" data-retour="ateliers" data-t="retour"></button>
+      <div class="etapes" id="secu-etapes"></div>
+    </div>
+    <div class="dialogue">
+      <div class="dialogue__mascotte" id="secu-mascotte"></div>
+      <div class="bulle">
+        <div class="bulle__texte" id="secu-bulle"></div>
+        <button type="button" class="btn-ecouter" id="secu-ecouter"></button>
+      </div>
+    </div>
+    <div class="secu-scene" id="secu-scene"></div>
+    <div class="secu-actions" id="secu-actions"></div>
+    <aside class="inventaire" id="inventaire" hidden>
+      <span class="inventaire__titre" data-t="inventaire"></span>
+      <div class="inventaire__cases" id="inventaire-cases"></div>
+    </aside>
+  </section>
+
+  <!-- Réglages : bouton engrenage permanent + panneau -->
+  <button type="button" class="btn-reglages" id="btn-reglages" hidden></button>
+  <div class="reglages" id="reglages" hidden>
+    <div class="reglages__carte" id="reglages-carte"></div>
+  </div>
+
+  <div class="modale" id="modale" hidden>
+    <div class="modale__carte">
+      <div class="modale__ico" id="modale-ico"></div>
+      <p class="modale__texte" id="modale-texte"></p>
+      <div class="modale__boutons" id="modale-boutons"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="trad-pop" id="trad-pop" hidden></div>
+  <canvas id="confetti" class="confetti-canvas"></canvas>
+
+  <script src="js/langues/fr.js"></script>
+  <script src="js/langues/en.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/voix.js"></script>
+  <script src="js/dessins.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/securite.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
