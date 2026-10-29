@@ -113,6 +113,25 @@
     </aside>
   </section>
 
+  <!-- ÉCRAN : MINI-LABO D'UN ATELIER (contenu construit par labo.js) -->
+  <section id="screen-labo" class="screen screen--labo">
+    <div class="secu-entete">
+      <button type="button" class="btn-back" data-retour="ateliers" data-t="retour"></button>
+      <div class="etapes" id="labo-etapes"></div>
+    </div>
+    <div class="dialogue">
+      <div class="dialogue__mascotte" id="labo-mascotte"></div>
+      <div class="bulle">
+        <div class="bulle__texte" id="labo-bulle"></div>
+        <button type="button" class="btn-ecouter" id="labo-ecouter"></button>
+      </div>
+    </div>
+    <div class="labo-scene" id="labo-scene"></div>
+    <div class="labo-jauge" id="labo-jauge" hidden><span></span></div>
+    <div class="labo-actions" id="labo-actions"></div>
+    <div class="labo-rayons" id="labo-rayons"></div>
+  </section>
+
   <!-- Réglages : bouton engrenage permanent + panneau -->
   <button type="button" class="btn-reglages" id="btn-reglages" hidden></button>
   <div class="reglages" id="reglages" hidden>
@@ -127,17 +146,34 @@
     </div>
   </div>
 
-  <div class="toast" id="toast" role="status"></div>
+  <div class="toast" id="toast" role="status"><div class="toast__bulle" id="toast-bulle"></div></div>
   <div class="trad-pop" id="trad-pop" hidden></div>
   <canvas id="confetti" class="confetti-canvas"></canvas>
 
   <script src="js/langues/fr.js"></script>
   <script src="js/langues/en.js"></script>
+  <script src="js/langues/es.js"></script>
+  <script src="js/langues/ar.js"></script>
+  <script src="js/langues/zh.js"></script>
+  <script src="js/langues/pt.js"></script>
+  <script src="js/langues/de.js"></script>
+  <script src="js/langues/tr.js"></script>
+  <script src="js/langues/uk.js"></script>
+  <script src="js/langues/ro.js"></script>
+  <script src="js/langues/fa.js"></script>
+  <script src="js/langues/ps.js"></script>
+  <script src="js/langues/bn.js"></script>
+  <script src="js/langues/ta.js"></script>
+  <script src="js/langues/si.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/voix.js"></script>
   <script src="js/dessins.js"></script>
+  <script src="js/dessins-labo.js"></script>
   <script src="js/confetti.js"></script>
+  <script src="js/dialogue.js"></script>
   <script src="js/securite.js"></script>
+  <script src="js/ateliers.js"></script>
+  <script src="js/labo.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

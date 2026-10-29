@@ -4,7 +4,7 @@
 
 (function () {
   const CLE = 'atelier-chimie-upe2a';
-  const ECRANS_AVEC_REGLAGES = ['ateliers', 'securite'];
+  const ECRANS_AVEC_REGLAGES = ['ateliers', 'securite', 'labo'];
   const MEDAILLES = ['securite', 'bleue', 'tresor', 'lumiere'];
   // Le mot « langue » qui défile sur le bouton d'accueil : français, puis langues les plus courantes
   const MOTS_LANGUE = [
@@ -34,14 +34,17 @@
     langue: afficherLangues,
     niveau: afficherNiveaux,
     ateliers: afficherAteliers,
-    securite: () => Securite.afficher()
+    securite: () => Securite.afficher(),
+    labo: () => Labo.afficher()
   };
 
   function montrer(nom) {
     document.querySelectorAll('.screen').forEach((s) => s.classList.toggle('active', s.id === 'screen-' + nom));
     ecran = nom;
+    document.body.dataset.ecran = nom;
     $('btn-reglages').hidden = !ECRANS_AVEC_REGLAGES.includes(nom);
     fermerTraduction();
+    cacherToast();
     Voix.arreter();
     rafraichir();
     window.scrollTo(0, 0);
@@ -125,7 +128,7 @@
   function afficherAteliers() {
     $('medailles').innerHTML = MEDAILLES.map((m) => {
       const gagnee = !!etat.medailles[m] && m !== medailleEnVol;
-      return `<span class="medaille-case${gagnee ? ' gagnee' : ''}" data-medaille="${m}">${Dessins.medaille(gagnee)}</span>`;
+      return `<span class="medaille-case${gagnee ? ' gagnee' : ''}" data-medaille="${m}">${Dessins.medaille(gagnee, m)}</span>`;
     }).join('');
     const ouvert = !!etat.medailles.securite && medailleEnVol !== 'securite';
     document.querySelectorAll('.carte[data-atelier]').forEach((c) => {
@@ -144,7 +147,8 @@
         secouer(c);
         toast(I18n.html('verrou'));
       } else {
-        toast(I18n.html('bientot'));
+        Labo.demarrer(c.dataset.atelier);
+        montrer('labo');
       }
     });
   });
@@ -159,7 +163,7 @@
 
     const voile = document.createElement('div');
     voile.className = 'badge-voile';
-    voile.innerHTML = `<div class="badge-vol"><div class="badge-geant">${Dessins.medaille(true)}</div></div>
+    voile.innerHTML = `<div class="badge-vol"><div class="badge-geant">${Dessins.medaille(true, id)}</div></div>
       <p class="badge-texte" dir="${I18n.dir(I18n.langueTexte())}">${I18n.html('badge_gagne')}</p>`;
     document.body.appendChild(voile);
 
@@ -180,7 +184,7 @@
       vol.addEventListener('transitionend', () => {
         medailleEnVol = null;
         cible.classList.add('gagnee', 'arrivee');
-        cible.innerHTML = Dessins.medaille(true);
+        cible.innerHTML = Dessins.medaille(true, id);
         voile.remove();
         if (id === 'securite') setTimeout(deverrouiller, 150);
       }, { once: true });
@@ -288,14 +292,25 @@
   }
 
   // ===== Petits messages =====
+  // persistant : le message reste affiché (mots cliquables) jusqu'à cacherToast() ;
+  // secouer : le message tremble (même erreur répétée)
   let minuteurToast = null;
-  function toast(html) {
+  function toast(html, { persistant = false, secouer: trembler = false } = {}) {
     const t = $('toast');
-    t.innerHTML = html;
-    t.dir = I18n.dir(I18n.langueTexte());
+    const bulle = $('toast-bulle');
+    bulle.innerHTML = html;
+    bulle.dir = I18n.dir(I18n.langueTexte());
     t.classList.add('visible');
+    t.classList.toggle('persistant', persistant);
     clearTimeout(minuteurToast);
-    minuteurToast = setTimeout(() => t.classList.remove('visible'), 2400);
+    if (!persistant) minuteurToast = setTimeout(() => cacherToast(), 2400);
+    if (trembler) secouer(bulle);
+  }
+
+  function cacherToast(seulementPersistant) {
+    const t = $('toast');
+    if (seulementPersistant && !t.classList.contains('persistant')) return;
+    t.classList.remove('visible', 'persistant');
   }
 
   function secouer(el) {
@@ -354,5 +369,5 @@
   window.addEventListener('scroll', fermerTraduction, { passive: true });
   window.addEventListener('resize', fermerTraduction);
 
-  window.App = { etat, sauver, montrer, rafraichir, recompenser, modale, toast, secouer };
+  window.App = { etat, sauver, montrer, rafraichir, recompenser, modale, toast, cacherToast, secouer };
 })();

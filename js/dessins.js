@@ -310,7 +310,7 @@
   // ===== Personnages du questionnaire (viewBox 120×160) =====
   // lunettes : null | 'tete' | 'yeux' ; blouse : 'fermee' | 'ouverte'
   // regard : décalage des pupilles ; poches : mains dans les poches ; panique : il hurle
-  function personne({ lunettes = null, blouse = 'fermee', regard = 0, poches = false, panique = false } = {}) {
+  function personne({ lunettes = null, blouse = 'fermee', regard = 0, poches = false, panique = false, cheveux = '#4A3222' } = {}) {
     const torse = 'M18 160 V118 Q18 98 42 94 H78 Q102 98 102 118 V160 Z';
     const manche = (d) => `<path d="${d}" stroke="${INK}" stroke-width="18" fill="none" stroke-linecap="round"/><path d="${d}" stroke="#E9EFF5" stroke-width="13" fill="none" stroke-linecap="round"/>`;
     const main = (x, r) => `<g transform="translate(${x} 64) rotate(${r})"><rect x="-8" y="-13" width="16" height="24" rx="8" fill="${PEAU}" stroke="#C99467" stroke-width="2"/>
@@ -336,7 +336,7 @@
     s += `<rect x="52" y="74" width="16" height="24" rx="4" fill="#E2AF85"/>
       <circle cx="30" cy="54" r="6" fill="${PEAU}"/><circle cx="90" cy="54" r="6" fill="${PEAU}"/>
       <circle cx="60" cy="50" r="30" fill="${PEAU}"/>
-      <path d="M30 50 Q28 16 60 16 Q92 16 90 50 Q86 32 60 30 Q34 32 30 50 Z" fill="#4A3222"/>`;
+      <path d="M30 50 Q28 16 60 16 Q92 16 90 50 Q86 32 60 30 Q34 32 30 50 Z" fill="${cheveux}"/>`;
     if (panique) {
       s += `<path d="M40 38 Q47 32 54 38 M66 38 Q73 32 80 38" fill="none" stroke="#4A3222" stroke-width="3" stroke-linecap="round"/>
         <circle cx="48" cy="50" r="7" fill="#fff" stroke="${INK}" stroke-width="2"/><circle cx="72" cy="50" r="7" fill="#fff" stroke="${INK}" stroke-width="2"/>
@@ -367,7 +367,21 @@
   }
 
   // ===== Médaille (viewBox 100×124) =====
-  function medaille(gagnee) {
+  // Motif central selon l'atelier gagné
+  const MOTIFS_MEDAILLE = {
+    securite: crane(50, 80, 1.15, '#4A3510', '#F5C542'),
+    bleue: `<g transform="translate(50 80) scale(1.25)">
+      <path d="M-14 10 L-5 -8 V-16 H5 V-8 L14 10 Q15 13 12 13 H-12 Q-15 13 -14 10 Z" fill="#FFF8E1" stroke="#4A3510" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M-10 2 H10 L14 10 Q15 13 12 13 H-12 Q-15 13 -14 10 Z" fill="#2557D6"/></g>`,
+    tresor: `<g transform="translate(50 80)"><circle r="18" fill="#C8743A" stroke="#4A3510" stroke-width="3"/>
+      <path d="M0 -10 L3 -3 L10 -3 L4 2 L6 9 L0 5 L-6 9 L-4 2 L-10 -3 L-3 -3 Z" fill="#F5C542"/></g>`,
+    lumiere: `<g transform="translate(50 80) scale(1.2)">
+      <path d="M-20 -6 L-14 -4 M20 -6 L14 -4 M0 -24 V-19 M-15 -18 L-11 -14 M15 -18 L11 -14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M-4 -14 V-6 Q-12 -3 -12 5 Q-12 14 0 14 Q12 14 12 5 Q12 -3 4 -6 V-14 Z" fill="#FFF8E1" stroke="#4A3510" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M-11 4 H11 Q11 13 0 13 Q-11 13 -11 4 Z" fill="#4FE3FF"/></g>`
+  };
+
+  function medaille(gagnee, motif = 'securite') {
     if (!gagnee) {
       return `<svg viewBox="0 0 100 124" class="medaille medaille--vide" aria-hidden="true">
         <path d="M30 4 H48 L60 50 H42 Z M70 4 H52 L40 50 H58 Z" fill="#D5DCE3"/>
@@ -378,7 +392,7 @@
       <path d="M30 4 H48 L60 50 H42 Z" fill="#3F7FE0"/><path d="M70 4 H52 L40 50 H58 Z" fill="#E5484D"/>
       <circle cx="50" cy="80" r="36" fill="#F5C542" stroke="#C9922A" stroke-width="5"/>
       <circle cx="50" cy="80" r="27" fill="none" stroke="#FCE29A" stroke-width="3"/>
-      ${crane(50, 80, 1.15, '#4A3510', '#F5C542')}
+      ${MOTIFS_MEDAILLE[motif]}
       <path d="M26 68 Q32 54 46 50" stroke="#fff" stroke-opacity=".6" stroke-width="4" fill="none" stroke-linecap="round"/>
     </svg>`;
   }
@@ -530,7 +544,7 @@
   }
 
   window.Dessins = {
-    objet, mannequin, mascotte, illu, interdit, personnage, camarades, medaille, cadenas, engrenage,
+    objet, mannequin, mascotte, illu, interdit, personne, personnage, camarades, medaille, cadenas, engrenage,
     hautParleur, globe, bulleNiveau, fondSecu, fondBleue, fondTresor, fondLumiere
   };
 })();

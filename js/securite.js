@@ -44,8 +44,8 @@
   const h = (cle, vars) => I18n.html(cle, null, vars);
 
   let s = null;
-  let bulleCle = null;
-  let bulleVars = null;
+  const dialogue = Dialogue.creer($('secu-mascotte'), $('secu-bulle'), $('secu-ecouter'));
+  const dire = (cle, vars) => dialogue.dire({ cle, vars });
 
   function demarrer() {
     s = {
@@ -58,40 +58,10 @@
       tableCible: null,
       q: 0,
       qPhase: 'question',
-      qFaux: []
+      qFaux: [],
+      erreur: null
     };
-    bulleCle = null;
-  }
-
-  // ===== Mascotte et bulle =====
-  $('secu-mascotte').innerHTML = Dessins.mascotte();
-  $('secu-ecouter').innerHTML = Dessins.hautParleur();
-  $('secu-ecouter').addEventListener('click', () => {
-    const m = $('secu-mascotte');
-    const lu = Voix.parler(I18n.texte(bulleCle, null, bulleVars), I18n.langueTexte(),
-      () => m.classList.add('parle'), () => m.classList.remove('parle'));
-    if (!lu) App.secouer($('secu-ecouter'));
-  });
-
-  function dire(cle, vars) {
-    const nouveau = cle !== bulleCle;
-    bulleCle = cle;
-    bulleVars = vars || null;
-    const b = $('secu-bulle');
-    b.innerHTML = h(cle, vars);
-    b.dir = I18n.dir(I18n.langueTexte());
-    if (nouveau) {
-      Voix.arreter();
-      const bulle = b.parentElement;
-      bulle.classList.remove('apparait');
-      void bulle.offsetWidth;
-      bulle.classList.add('apparait');
-      // La mascotte « parle » le temps de lire le texte
-      const m = $('secu-mascotte');
-      m.classList.add('parle');
-      clearTimeout(dire.minuteur);
-      dire.minuteur = setTimeout(() => m.classList.remove('parle'), Math.min(4000, 600 + b.textContent.length * 25));
-    }
+    dialogue.oublier();
   }
 
   // ===== Affichage =====
@@ -108,6 +78,21 @@
 
     $('inventaire').hidden = !(s.etape === 'table' || BESOIN[s.etape]);
     afficherInventaire();
+    // Le message d'erreur reste affiché (et suit la langue) jusqu'au bon choix
+    if (s.erreur) App.toast(h(s.erreur), { persistant: true });
+    else App.cacherToast(true);
+  }
+
+  // Mauvais objet : message persistant, qui tremble si l'erreur se répète
+  function signalerErreur(cle) {
+    const repetee = s.erreur === cle;
+    s.erreur = cle;
+    App.toast(h(cle), { persistant: true, secouer: repetee });
+  }
+
+  function effacerErreur() {
+    s.erreur = null;
+    App.cacherToast(true);
   }
 
   function afficherInventaire(arrivee) {
@@ -136,9 +121,10 @@
     if (s.tableCible) {
       if (o !== BESOIN[s.tableCible]) {
         App.secouer(btn);
-        App.toast(h('s_pas_celui'));
+        signalerErreur('s_pas_celui');
         return;
       }
+      effacerErreur();
       ajouterInventaire(o, btn, () => setTimeout(() => { s.tableCible = null; afficherEnHaut(); }, 350));
       return;
     }
@@ -219,9 +205,10 @@
     const z = s.etape;
     if (o !== BESOIN[z]) {
       App.secouer(caseEl);
-      App.toast(h('s_faux_' + z));
+      signalerErreur('s_faux_' + z);
       return;
     }
+    effacerErreur();
     const zone = document.querySelector('.habillage .zone-' + o);
     caseEl.style.visibility = 'hidden';
     voler(Dessins.objet(o), caseEl, zone, () => {
@@ -331,6 +318,7 @@
       etapeSuivante();
     } else if (id === 'secu-table') {
       s.tableCible = s.etape;
+      s.erreur = null;
       afficherEnHaut();
     }
   });
